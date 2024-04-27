@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  activemq-1:
+    build: . 
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+      - "61613:61613"
+    environment:
+      - NETWORK_URL=activemq-activemq-2-1:61616
+  activemq-2:
+    build : . 
+    environment:
+      - NETWORK_URL=activemq-activemq-1-1:61616
+    ports:
+      - "8162:8161"
+      - "61614:61613"
