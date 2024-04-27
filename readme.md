@@ -1,0 +1,1 @@
+This project aims to demonstrate a migration plan. Where we show that how we can connect two activemq instance with network of broker topology and move consumer and producer one at a time across activemq instance without major downtime.
