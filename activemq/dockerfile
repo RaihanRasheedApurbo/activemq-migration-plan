@@ -1,3 +1,7 @@
 FROM apache/activemq-classic:5.18.3
 
+COPY activemq /opt/apache-activemq/bin/
+RUN chmod 755 /opt/apache-activemq/bin/activemq
+COPY jmx_prometheus_javaagent-0.20.0.jar /opt/apache-activemq/bin/
+COPY config.yaml /opt/apache-activemq/bin/
 COPY activemq.xml /opt/apache-activemq/conf/activemq.xml

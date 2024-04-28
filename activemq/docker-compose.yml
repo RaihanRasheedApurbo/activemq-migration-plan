@@ -7,12 +7,16 @@ services:
       - "8161:8161"
       - "61616:61616"
       - "61613:61613"
+      - "1111:1111"
     environment:
       - NETWORK_URL=activemq-activemq-2-1:61616
+      - JAVA_AGENT_OPTS="-javaagent:./opt/apache-activemq/bin/jmx_prometheus_javaagent-0.20.0.jar=1111:/opt/apache-activemq/bin/config.yaml"
   activemq-2:
     build : . 
     environment:
       - NETWORK_URL=activemq-activemq-1-1:61616
+      - JAVA_AGENT_OPTS="-javaagent:./opt/apache-activemq/bin/jmx_prometheus_javaagent-0.20.0.jar=1111:/opt/apache-activemq/bin/config.yaml"
     ports:
+      - "1112:1111"
       - "8162:8161"
       - "61614:61613"
