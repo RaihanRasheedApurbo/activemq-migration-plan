@@ -1,1 +1,2 @@
 This project aims to demonstrate a migration plan. Where we show that how we can connect two activemq instance with network of broker topology and move consumer and producer one at a time across activemq instance without major downtime.
+Additionally we have added jmx_prometheus_exporter[https://github.com/prometheus/jmx_exporter] java agent inside activemq that exports prometheus metrics. We can use this[https://grafana.com/grafana/dashboards/9087-apache-artemis/] grafana config to create beautiful dashboard with the metrics exposed by the java agent.
